@@ -405,7 +405,7 @@ def handle_event(event):
         if postback_data_t != "送信中" and postback_data_t != "これから提案するから、少し待っててね":
                 try:
                     messagess = [
-                    {"role": "system", "content": f"あなたはベテランの主婦で料理のレパートリーも多いです。今日は{feeling}です。料理を5つ提案して下さい。"},
+                    {"role": "system", "content": f"あなたはベテランの主婦で料理のレパートリーも多いです。今日は{feeling}です。料理を5つ、なるべく簡潔に提案して下さい。また、なぜそれらの料理を提案したかの理由も簡潔に説明して下さい。"},
                     {"role": "user", "content": postback_data_t},
                     ]
                     response = openai.chat.completions.create(
