@@ -1,68 +1,76 @@
-# Linebot-cooking-adviser
+🍜 LINE レシピ推奨ボット
 
-このプロジェクトは、LINE Messaging APIとOpenAIを活用したレシピ提案ボットです。ユーザーが入力した情報に基づいて、好みに合ったレシピを提案します。
+このプロジェクトは、LINE Messaging API と OpenAI API を活用した、ユーザーの好みに基づくレシピを推奨するLINEボットです！
 
-**必要な環境**
+**機能概要**
+
+ユーザーのLINE入力を元に、
+OpenAI API (例: chat.completions.create) を用いてレシピを生成。
+食材や風味、予算に基づきカスタマイズができるbot
+
+**デモ現在の流れ**
+
+ユーザーがLINEで「気分」や「予算」を選択
+LINE Botが追加質問
+すべての情報が集まったらOpenAIにレシピ作成を依頼
+LINEに推奨レシピを返信
+
+**開発環境**
 
 Python 3.x
-line-bot-sdk ライブラリ
-openai ライブラリ
-その他の依存ライブラリ（下記に記載）
+ライブラリ:
+line-bot-sdk
+openai
+API:
+LINE Messaging API
+OpenAI API
 
+**インストール**
 
-**インストール手順**
+1. Python 環境の準備
 
-1. Python環境の準備
-このプロジェクトはPython 3.xを使用しています。Pythonがインストールされていない場合は、公式サイトからインストールしてください。
+Python 3.x をインストール
+https://www.python.org
 
-2. 必要なライブラリのインストール
-依存ライブラリをインストールするために、以下のコマンドを実行してください：
+2. 依存ライブラリのインストール
 
-```bash
-pip install line-bot-sdk openai
-```
+'''pip install line-bot-sdk openai'''
+
+または requirements.txt を使用:
+
+'''pip install -r requirements.txt'''
 
 3. 環境変数の設定
-次に、LINEのチャネル情報とOpenAIのAPIキーを環境変数に設定します。
 
 LINE_CHANNEL_SECRET
 LINE_CHANNEL_ACCESS_TOKEN
 OPEN_AI_KEY
-これらの情報はLINE Developersのコンソールで取得できます。
+→ LINE Developers & OpenAI ダッシュボードで発行
 
-4. Lambdaにデプロイ（オプション）
-AWS Lambdaで実行するためには、Lambdaにデプロイする必要があります。デプロイ後、API Gatewayを使ってエンドポイントを設定し、LINEのWebhook URLとして設定します。
+**AWS Lambda での動作 (オプション)**
 
+Lambda にデプロイ
+API Gateway でHTTPSエンドポイントを指定
+LINEのWebhook URLにそれを設定
 
-**プロジェクトの説明**
-このプロジェクトでは、以下の機能を実装しています：
+**使用法**
 
-LINE BotのWebhooks受信
-ユーザーがLINEでメッセージを送信すると、lambda_handler 関数が呼ばれて処理されます。
+イベントフロー:
+「気分」や「ジャンル」をLINEで選択
+「予算」や「味の好み」(辛い、甘い等)を続けて選択
+OpenAI が最適なレシピを生成
 
-ユーザーの好みに基づいたレシピ提案
-ユーザーの入力をもとに、好みのレシピを提案します。ユーザーの食材、味の好み、予算などに基づいてレシピをカスタマイズします。
+**ファイル構成**
 
-OpenAIによるレシピ生成
-OpenAIのAPIを使用して、ユーザーの好みに合わせたレシピを生成します。openai.chat.completions.create を使用して、レシピに関する内容を生成します。
-
-**使用方法**
-ユーザーとのインタラクションは、LINEのメッセージイベントとポストバックイベントに基づいて進行します。以下は主なフローです：
-
-ユーザーが「気分」や「予算」などを選択すると、それに基づいて次の質問が送信されます。
-ユーザーが回答を完了すると、OpenAIがユーザーに合ったレシピを提案します。
-主なイベントフロー
-気分や料理の種類の選択
-ユーザーは「気分」や「ジャンル」などの選択肢をタップして入力します。
-
-予算や味の好みの設定
-予算や味の好み（辛い、甘い、酸っぱいなど）を選んでいきます。
-
-レシピ提案
-ユーザーの選択に基づいて、OpenAIが最適なレシピを提案します。
+.
+├── lambda_function.py
+├── requirements.txt
+├── README.md
 
 
-**開発環境**
-Python 3.x
-ライブラリ: line-bot-sdk, openai
-使用API: LINE Messaging API, OpenAI API
+**未定の部分**
+
+リッチメニューのデザイン
+chatgptのプロンプト内容
+画像認識による冷蔵庫の中身からの提案
+
