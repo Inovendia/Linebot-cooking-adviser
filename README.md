@@ -34,11 +34,15 @@ https://www.python.org
 
 2. 依存ライブラリのインストール
 
-'''pip install line-bot-sdk openai'''
+'''
+pip install line-bot-sdk openai
+'''
 
 または requirements.txt を使用:
 
-'''pip install -r requirements.txt'''
+'''
+pip install -r requirements.txt
+'''
 
 3. 環境変数の設定
 
