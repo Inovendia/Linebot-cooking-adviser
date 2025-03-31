@@ -8,6 +8,12 @@
 OpenAI API (例: chat.completions.create) を用いてレシピを生成。
 食材や風味、予算に基づきカスタマイズができるbot
 
+**システム構成図**
+
+
+![Image](https://github.com/user-attachments/assets/893c8d8a-ed06-4379-9251-f56cb9b180da)
+
+
 **デモ現在の流れ**
 
 ユーザーがLINEで「気分」や「予算」を選択
@@ -34,15 +40,15 @@ https://www.python.org
 
 2. 依存ライブラリのインストール
 
-'''
+```
 pip install line-bot-sdk openai
-'''
+```
 
 または requirements.txt を使用:
 
-'''
+```
 pip install -r requirements.txt
-'''
+```
 
 3. 環境変数の設定
 
@@ -65,12 +71,12 @@ LINEのWebhook URLにそれを設定
 OpenAI が最適なレシピを生成
 
 **ファイル構成**
-
+```
 .
 ├── lambda_function.py
 ├── requirements.txt
 ├── README.md
-
+```
 
 **未定の部分**
 
