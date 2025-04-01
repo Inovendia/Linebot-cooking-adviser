@@ -40,7 +40,7 @@ API:
 LINE Messaging API
 OpenAI API
 <br>
-**インストール**
+<h3>インストール</h3>
 <br>
 1. Python 環境の準備
 
@@ -66,7 +66,7 @@ LINE_CHANNEL_ACCESS_TOKEN
 OPEN_AI_KEY
 → LINE Developers & OpenAI ダッシュボードで発行
 
-<h3>AWS Lambda での動作 (オプション)**
+<h3>AWS Lambda での動作 (オプション)</h3>
 
 Lambda にデプロイ
 API Gateway でHTTPSエンドポイントを指定
@@ -80,11 +80,16 @@ LINEのWebhook URLにそれを設定
 OpenAI が最適なレシピを生成
 <br>
 <h3>ファイル構成</h3>
+
 ```
 .
-├── lambda_function.py
-├── requirements.txt
 ├── README.md
+├── cooking_bot.py
+├── requirements.txt
+├── rich_menu.py
+├── samconfig.toml
+└── template.json
+
 ```
 
 <h3>今後の課題</h3>
