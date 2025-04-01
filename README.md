@@ -10,25 +10,35 @@ OpenAI API (例: chat.completions.create) を用いてレシピを生成。
 
 **bot使用イメージ**
 
-![Image](https://github.com/user-attachments/assets/a86cc692-5c36-4919-89cc-b89a34e25544)
-![Image](https://github.com/user-attachments/assets/7eb237f1-225a-4e4d-b110-005658b6daa7)
-![Image](https://github.com/user-attachments/assets/0515c8e7-f63a-4a67-8330-038f3c1e25b7)
+<div style="display: flex; gap: 10px;">
+  <img src="https://github.com/user-attachments/assets/a86cc692-5c36-4919-89cc-b89a34e25544" width="25%">
+  <img src="https://github.com/user-attachments/assets/7eb237f1-225a-4e4d-b110-005658b6daa7" width="25%">
+  <img src="https://github.com/user-attachments/assets/0515c8e7-f63a-4a67-8330-038f3c1e25b7" width="25%">
+</div>
+<br>
+<br>
+<br>
+<br>
+
+
+
 
 **システム構成図**
+<br>
 
 
 ![Image](https://github.com/user-attachments/assets/893c8d8a-ed06-4379-9251-f56cb9b180da)
 
 
 **デモ現在の流れ**
-
+<br>
 ユーザーがLINEで「気分」や「予算」を選択
 LINE Botが追加質問
 すべての情報が集まったらOpenAIにレシピ作成を依頼
 LINEに推奨レシピを返信
-
+<br>
 **開発環境**
-
+<br>
 Python 3.x
 ライブラリ:
 line-bot-sdk
@@ -36,9 +46,9 @@ openai
 API:
 LINE Messaging API
 OpenAI API
-
+<br>
 **インストール**
-
+<br>
 1. Python 環境の準備
 
 Python 3.x をインストール
@@ -68,14 +78,14 @@ OPEN_AI_KEY
 Lambda にデプロイ
 API Gateway でHTTPSエンドポイントを指定
 LINEのWebhook URLにそれを設定
-
+<br>
 **使用法**
-
+<br>
 イベントフロー:
 「気分」や「ジャンル」をLINEで選択
 「予算」や「味の好み」(辛い、甘い等)を続けて選択
 OpenAI が最適なレシピを生成
-
+<br>
 **ファイル構成**
 ```
 .
@@ -85,7 +95,7 @@ OpenAI が最適なレシピを生成
 ```
 
 **未定の部分**
-
+<br>
 リッチメニューのデザイン
 chatgptのプロンプト内容
 画像認識による冷蔵庫の中身からの提案
