@@ -8,6 +8,12 @@
 OpenAI API (例: chat.completions.create) を用いてレシピを生成。
 食材や風味、予算に基づきカスタマイズができるbot
 
+**bot使用イメージ**
+
+![Image](https://github.com/user-attachments/assets/a86cc692-5c36-4919-89cc-b89a34e25544)
+![Image](https://github.com/user-attachments/assets/7eb237f1-225a-4e4d-b110-005658b6daa7)
+![Image](https://github.com/user-attachments/assets/0515c8e7-f63a-4a67-8330-038f3c1e25b7)
+
 **システム構成図**
 
 
